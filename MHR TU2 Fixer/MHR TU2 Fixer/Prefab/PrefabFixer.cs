@@ -42,8 +42,14 @@ namespace MHR_TU2_Fixer
 
         private static void ConvertPrefabs(string[] prefabs, byte[] oldPrefabBytes, byte[] newPrefabBytes)
         {
+            string exPath = Path.Combine(Program.CurrentDirectory, "Prefab");
             foreach (var prefab in prefabs)
             {
+                if (prefab.StartsWith(exPath))
+                {
+                    continue;
+                }
+                Console.WriteLine("fix pfb:" + prefab);
                 if (prefab.Contains("helm"))
                 {
                     //Need to recreate the helm file, so let's use a premade one and replace the file names inside with the armor id!

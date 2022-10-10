@@ -10,19 +10,29 @@ namespace MHR_TU2_Fixer.Helpers
 {
     public static class MDFHelper
     {
+
         public static void ConvertMDFFiles(string[] files, MDFConversion mdfConversion)
         {
+            string exPath = Path.Combine(Program.CurrentDirectory, "MDF");
             foreach (var file in files)
             {
+                if (file.StartsWith(exPath)) {
+                    continue;
+                }
                 Console.WriteLine($"Attempting to convert {file}");
 
                 var newFileName = file + ".old";
+                if (File.Exists(newFileName))
+                {
+                    File.Delete(newFileName);
+                }
                 File.Move(file, newFileName);
                 var createFile = File.Create(file);
                 createFile.Close();
 
                 using (var openFile = OpenFile(newFileName))
                 {
+                    Console.WriteLine("fix mdf:" + file);
                     var mdfFile = new MDFFile(newFileName, openFile);
                     var newMDFFile = Path.Combine(Path.GetDirectoryName(file), $"{Path.GetFileNameWithoutExtension(file)}.23");
                     mdfFile.Save(newMDFFile, mdfConversion);
@@ -35,7 +45,8 @@ namespace MHR_TU2_Fixer.Helpers
 
         public static BinaryReader OpenFile(string filePath)
         {
-            return new BinaryReader(new FileStream(filePath, FileMode.Open), Encoding.Unicode);
+            byte[] data = File.ReadAllBytes(filePath);
+            return new BinaryReader(new MemoryStream(data), Encoding.Unicode);
         }
 
         public static void Save(this MDFFile mdfFile, string filePath, MDFConversion mdfConversion)

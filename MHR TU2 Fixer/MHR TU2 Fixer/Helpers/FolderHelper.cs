@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using Microsoft.WindowsAPICodePack.Dialogs;
+//using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace MHR_TU2_Fixer.Helpers
 {
@@ -35,6 +35,7 @@ namespace MHR_TU2_Fixer.Helpers
             return folder;
         }
 
+        /*
         public static DirectoryInfo PickStaticFolder(params string[] path)
         {
             var folderPath = string.Empty;
@@ -52,7 +53,7 @@ namespace MHR_TU2_Fixer.Helpers
 
             return new DirectoryInfo(folderPath);
         }
-
+        */
         public static void CloneDirectory(DirectoryInfo root, DirectoryInfo dest, string searchPattern = "*")
         {
             foreach (var directory in root.GetDirectories())
