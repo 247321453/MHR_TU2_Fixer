@@ -66,12 +66,12 @@ namespace MHR_TU2_Fixer.Helpers
             //There is a working skin, and alpha/normal body....
             //Ignore property - OCC Color as it has caused issues with the models showing as white....
 
-            var fileName = Path.Combine(Environment.CurrentDirectory, "MDF/example/TU2/f_arm272.mdf2.23");
-            var npcFaceFileName = Path.Combine(Environment.CurrentDirectory, "MDF/example/TU2/npc001_00_face.mdf2.23");
-            var npcBodyFileName = Path.Combine(Environment.CurrentDirectory, "MDF/example/TU2/npc002_00_body.mdf2.23");
-            var npcBodyFurFileName = Path.Combine(Environment.CurrentDirectory, "MDF/example/TU2/npc615_00_body.mdf2.23");
-            var iceFilename = Path.Combine(Environment.CurrentDirectory, "MDF/example/TU2/f_body353.mdf2.23");
-            var detailedEmissiveFilename = Path.Combine(Environment.CurrentDirectory, "MDF/example/TU2/f_body355.mdf2.23");
+            var fileName = Path.Combine(Program.CurrentDirectory, "MDF/example/TU2/f_arm272.mdf2.23");
+            var npcFaceFileName = Path.Combine(Program.CurrentDirectory, "MDF/example/TU2/npc001_00_face.mdf2.23");
+            var npcBodyFileName = Path.Combine(Program.CurrentDirectory, "MDF/example/TU2/npc002_00_body.mdf2.23");
+            var npcBodyFurFileName = Path.Combine(Program.CurrentDirectory, "MDF/example/TU2/npc615_00_body.mdf2.23");
+            var iceFilename = Path.Combine(Program.CurrentDirectory, "MDF/example/TU2/f_body353.mdf2.23");
+            var detailedEmissiveFilename = Path.Combine(Program.CurrentDirectory, "MDF/example/TU2/f_body355.mdf2.23");
 
             var bodyDetector = "BaseDielectricMap";
             var skinDetector = "SkinMap";

@@ -79,7 +79,7 @@ namespace MHR_TU2_Fixer
                     //Need to recreate the helm file, so let's use a premade one and replace the file names inside with the armor id!
                     var filename = Path.GetFileName(prefab);
                     var fileBytes = File.ReadAllBytes(prefab);
-                    var prefabBytes = File.ReadAllBytes($@"{Environment.CurrentDirectory}\Prefab\example\TU2\f_helm001.pfb.17");
+                    var prefabBytes = File.ReadAllBytes($@"{Program.CurrentDirectory}\Prefab\example\TU2\f_helm001.pfb.17");
 
                     var armorId = int.Parse(new string(filename.Replace(".pfb.17", "").Where(z => char.IsDigit(z)).ToArray())).ToString("000");
                     var isMale = filename.Contains("m_helm");

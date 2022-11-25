@@ -34,7 +34,7 @@ namespace MHR_TU2_Fixer
             //     "*.pfb.17"
             //    );
             //
-            PrefabFixer.GeneratePrefabs(null, Directory.CreateDirectory(baseFolder));
+            //PrefabFixer.GeneratePrefabs(null, Directory.CreateDirectory(baseFolder));
 
             //Convert the MDF Files
             //Copy over all files in same format to folder, and attempt conversion on the folder
